@@ -31,4 +31,4 @@ def stats() -> str:
     Return:
         - the status of the API
         """
-    abort(401)
+    abort(401, description="Unauthorized")
