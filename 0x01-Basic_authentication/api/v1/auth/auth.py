@@ -15,7 +15,7 @@ class Auth:
         for i in excluded_paths:
             if i.startswith(path):
                 return False
-        return False
+        return True
     def authorization_header(self, request=None) -> str:
         """ function that handles the authorization header """
         self.request = request
