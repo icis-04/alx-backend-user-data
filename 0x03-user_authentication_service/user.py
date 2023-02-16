@@ -3,14 +3,14 @@
 
 
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Column, Integer, String
+from sqlalchemy import Column, Integer, String, Sequence
 
 Base = declarative_base()
 class User(Base):
     """ Base class for the User model """
     __tablename__ = 'users'
 
-    id: int = Column(Integer, primary_key=True)
+    id: int = Column(Integer, primary_key=True, autoincrement=True)
     email: str = Column(String(250), nullable=False)
     hashed_password: str = Column(String(250), nullable=False)
     session_id: str = Column(String(250), nullable=True)
